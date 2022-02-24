@@ -1,10 +1,37 @@
 {
-  "name": "huaer-template-h5",
+  "name": "huaer-template-admin",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "dev": "vue-cli-service serve",
+    "build:stage": "vue-cli-service build --mode staging",
+    "build:prod": "vue-cli-service build --mode production",
+    "prettier": "prettier --write .",
+    "lint:eslint": "eslint --fix .",
+    "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.md": [
+      "prettier --write"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{css,scss,less,styl}": [
+      "prettier --write",
+      "stylelint --fix"
+    ],
+    "*.vue": [
+      "prettier --write",
+      "eslint --fix",
+      "stylelint --fix"
+    ]
   },
   "dependencies": {
     "core-js": "^3.8.3",
@@ -14,11 +41,24 @@
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-plugin-vuex": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "eslint": "^8.9.0",
+    "eslint-config-huaer": "^1.0.2",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.5.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^12.3.4",
+    "prettier": "^2.5.1",
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^5.0.0",
     "vue-template-compiler": "^2.6.14"
   }
 }
