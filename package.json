@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "serve": "vue-cli-service serve",
     "dev": "vue-cli-service serve",
     "build:stage": "vue-cli-service build --mode staging",
     "build:prod": "vue-cli-service build --mode production",
     "prettier": "prettier --write .",
-    "lint:eslint": "eslint --fix .",
-    "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/"
+    "lint": "vue-cli-service lint src --no-fix --max-warnings 0",
+    "lint:style": "stylelint \"**/*.{vue,less,postcss,css,scss}\" --no-fix --max-warnings 0",
+    "lint:style:fix": "stylelint \"**/*.{vue,less,postcss,css,scss}\" --fix",
+    "report": "vue-cli-service build --report"
   },
   "husky": {
     "hooks": {
@@ -34,7 +37,16 @@
     ]
   },
   "dependencies": {
+    "axios": "^0.26.0",
     "core-js": "^3.8.3",
+    "dayjs": "^1.10.8",
+    "echarts": "^5.3.0",
+    "element-ui": "^2.15.6",
+    "lodash": "^4.17.21",
+    "normalize.css": "^8.0.1",
+    "nprogress": "^0.2.0",
+    "qs": "^6.10.3",
+    "v-clipboard": "^2.2.3",
     "vue": "^2.6.14",
     "vue-router": "^3.5.1",
     "vuex": "^3.6.2"
@@ -47,6 +59,7 @@
     "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-plugin-vuex": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "babel-plugin-component": "^1.1.1",
     "eslint": "^8.9.0",
     "eslint-config-huaer": "^1.0.2",
     "eslint-config-prettier": "^8.4.0",
