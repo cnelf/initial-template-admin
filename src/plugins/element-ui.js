@@ -174,7 +174,7 @@ function $message(options) {
 ['success', 'error', 'warning', 'info'].forEach((type) => {
   $message[type] = function (msgStr) {
     Message.closeAll();
-    let options = typeof msgStr === 'string' ? { message: msgStr } : msgStr;
+    const options = typeof msgStr === 'string' ? { message: msgStr } : msgStr;
     options.type = type;
     options.duration = options.duration || 1600;
     Message(options);
