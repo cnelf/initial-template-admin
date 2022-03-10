@@ -1,6 +1,6 @@
 module.exports = {
   parserOptions: {
-    parser: '@babel/eslint-parser'
+    parser: 'babel-eslint'
   },
   extends: ['huaer', 'plugin:vue/recommended', 'prettier'],
   plugins: ['prettier'],
