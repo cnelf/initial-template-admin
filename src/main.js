@@ -7,9 +7,10 @@ import echarts from './plugins/echarts';
 import Clipboard from 'v-clipboard';
 import { showLoading, autoLoading } from '@/utils';
 
+import 'windi.css';
+import './styles/index.scss';
 import './icons';
 import './plugins/element-ui';
-import './styles/index.scss';
 
 import * as filters from './filters';
 Object.keys(filters).forEach((key) => Vue.filter(key, filters[key]));
