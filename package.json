@@ -43,7 +43,6 @@
     "echarts": "^5.3.1",
     "element-ui": "^2.15.6",
     "lodash": "^4.17.21",
-    "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
     "qs": "^6.10.3",
     "v-clipboard": "^2.2.3",
