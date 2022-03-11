@@ -47,7 +47,7 @@
 
 项目使用了 `image-webpack-loader` 来进行图片的压缩，该 loader 内部又依赖于 `imagemin`，因为 `imagemin` 在国内安装困难，所以大概率是 `imagemin` 安装失败导致的问题。提供以下几个解决方案：
 
-1. 使用 yarn 安装依赖（推荐，项目在 package.json 内置了 yarn 相关优化配置）
+1. 使用 pnpm 或者 yarn 安装依赖（推荐，项目在 package.json 内置了优化相关的配置）
 
    ```json
    "resolutions": {
@@ -61,9 +61,9 @@
    199.232.4.133 raw.githubusercontent.com
    ```
 
-#### 使用 yarn 安装 imagemin 依赖失败
+#### 安装 imagemin 依赖失败
 
-如果使用 yarn 还是不能安装依赖，可以将图片压缩功能移除，移除方法如下：
+如果使用 pnpm 和 yarn 还是不能安装依赖，可以将图片压缩功能移除，移除方法如下：
 
 - 在 `package.json` 内删除 `image-webpack-loader` 这个依赖。这会导致图片没有压缩，但是可以手动到在线网站进行压缩。这里推荐[tinypng](https://tinypng.com/)
 - 在 `vue.config.js` 内删除与 **图片压缩** 相关的配置信息。
