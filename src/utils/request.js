@@ -5,7 +5,7 @@ import { $message } from '@/plugins/element-ui';
 import { getLocalStorage, removeLocalStorage } from '@/utils';
 
 const service = axios.create({
-  baseURL: process.env.VUE_APP_BASE_URL,
+  baseURL: import.meta.env.VITE_BASE_URL,
   timeout: 60 * 1000
 });
 

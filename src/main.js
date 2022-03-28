@@ -7,9 +7,9 @@ import echarts from './plugins/echarts';
 import Clipboard from 'v-clipboard';
 import { showLoading, autoLoading } from '@/utils';
 
-import 'windi.css';
+import 'virtual:windi.css';
+import 'virtual:svg-icons-register';
 import './styles/index.scss';
-import './icons';
 import './plugins/element-ui';
 
 import * as filters from './filters';
