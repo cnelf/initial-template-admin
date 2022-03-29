@@ -1,7 +1,7 @@
 <template>
-  <el-container style=" flex-direction: column;height: 100%">
+  <el-container class="flex-col h-full">
     <Header></Header>
-    <el-container style="flex: 1; height: 0">
+    <el-container class="flex-1 h-full">
       <Aside></Aside>
       <Main></Main>
     </el-container>
@@ -9,9 +9,9 @@
 </template>
 
 <script>
-  import Header from './components/Header';
-  import Aside from './components/Aside';
-  import Main from './components/Main';
+  import Header from './components/Header.vue';
+  import Aside from './components/Aside.vue';
+  import Main from './components/Main.vue';
   export default {
     name: 'Layout',
 

@@ -1,7 +1,7 @@
 <template>
   <el-header>
     <div>admin</div>
-    <div @click="handleLogout">退出</div>
+    <div class="cursor-default" @click="handleLogout">退出</div>
   </el-header>
 </template>
 
