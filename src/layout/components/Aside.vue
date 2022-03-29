@@ -1,6 +1,6 @@
 <template>
-  <el-aside style="height: 100%">
-    <el-scrollbar style="height: 100%">
+  <el-aside class="h-full">
+    <el-scrollbar class="h-full">
       <el-menu :router="true">
         <template v-for="route in adminRoutes">
           <el-menu-item v-if="!route.meta" :key="route.name" :index="route.path">

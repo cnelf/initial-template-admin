@@ -1,5 +1,5 @@
 <template>
-  <el-container style="height: 100%">
+  <el-container class="h-full">
     <el-card>
       <div slot="header">登 录</div>
       <el-form label-width="60px" style="width: 360px">

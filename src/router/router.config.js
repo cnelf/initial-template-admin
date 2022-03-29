@@ -1,4 +1,4 @@
-import Layout from '@/layout';
+import Layout from '@/layout/index.vue';
 export const baseRoutes = [
   {
     path: '/',
@@ -7,7 +7,7 @@ export const baseRoutes = [
   {
     path: '/login',
     name: 'Login',
-    component: () => import('@/views/login')
+    component: () => import('@/views/login/index.vue')
   }
 ];
 
@@ -20,7 +20,7 @@ export const adminRoutes = [
         path: '/',
         name: 'Home',
         meta: { title: '首页', icon: 'el-icon-s-home' },
-        component: () => import('@/views/home')
+        component: () => import('@/views/home/index.vue')
       }
     ]
   },
@@ -30,7 +30,7 @@ export const adminRoutes = [
     component: Layout,
     children: [
       {
-        path: 'customerList',
+        path: 'customer-list',
         name: 'CustomerList',
         meta: { title: '用户列表' },
         children: [
@@ -43,12 +43,12 @@ export const adminRoutes = [
       },
 
       {
-        path: 'customerInfo',
+        path: 'customer-info',
         name: 'CustomerInfo',
         meta: { title: '用户信息' }
       },
       {
-        path: 'customerData',
+        path: 'customer-data',
         name: 'CustomerData',
         meta: { title: '用户数据' }
       }
