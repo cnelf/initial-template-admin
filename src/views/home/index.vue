@@ -1,5 +1,10 @@
 <template>
-  <div>首页</div>
+  <div>
+    <div class="flex items-center">
+      <div>切换主题色：</div>
+      <ThemePicker />
+    </div>
+  </div>
 </template>
 
 <script>
