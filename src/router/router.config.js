@@ -8,6 +8,17 @@ export const baseRoutes = [
     path: '/login',
     name: 'Login',
     component: () => import('@/views/login/index.vue')
+  },
+  {
+    path: '/404',
+    component: Layout,
+    children: [
+      {
+        path: '/',
+        name: 'NotFound',
+        component: () => import('@/views/error/404.vue')
+      }
+    ]
   }
 ];
 
@@ -64,5 +75,8 @@ export const adminRoutes = [
         meta: { title: '系统设置', icon: 'el-icon-s-home' }
       }
     ]
-  }
+  },
+
+  // 404页面必须放置在最后
+  { path: '*', redirect: '/404', hidden: true }
 ];

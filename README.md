@@ -12,21 +12,20 @@
 - 引入 WindiCSS
 - Layout 布局
 - 打包构建
+- 登录页
+- 404 错误页
 - 通用组件
-  - 主题色切换
+  - 主题色切换（ThemePicker）
+  - 富文本编辑器（RichTextEditor）
 
 ### 待完成
 
-- 登录页
-- 404 错误页
 - 权限路由
 - Mock 模块
 - 自动化测试
 - Excel 上传和下载
 - 多语言 i18n
 - 通用组件
-  - 面包屑导航（Breadcrumb）
-  - 富文本编辑器（Editor）
   - 空状态（EmptyView）
   - 图片上传（UploadImage）
   - 视频播放器（VideoPlayer）

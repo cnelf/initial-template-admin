@@ -3,24 +3,25 @@
     <el-scrollbar class="h-full">
       <el-menu :router="true">
         <template v-for="route in adminRoutes">
-          <el-menu-item v-if="!route.meta" :key="route.name" :index="route.path">
-            <i :class="route.children[0].meta.icon"></i>
-            <span slot="title">{{ route.children[0].meta.title }}</span>
-          </el-menu-item>
-
-          <el-submenu v-else :key="route.name" :index="route.path">
-            <template slot="title">
-              <i :class="route.meta.icon"></i>
-              <span slot="title">{{ route.meta.title }}</span>
-            </template>
-            <el-menu-item
-              v-for="childRoute in route.children"
-              :key="childRoute.name"
-              :index="`${route.path}/${childRoute.path}`"
-            >
-              {{ childRoute.meta.title }}
+          <template v-if="!route.hidden">
+            <el-menu-item v-if="!route.meta" :key="route.name" :index="route.path">
+              <i :class="route.children[0].meta.icon"></i>
+              <span slot="title">{{ route.children[0].meta.title }}</span>
             </el-menu-item>
-          </el-submenu>
+            <el-submenu v-else :key="route.name" :index="route.path">
+              <template slot="title">
+                <i :class="route.meta.icon"></i>
+                <span slot="title">{{ route.meta.title }}</span>
+              </template>
+              <el-menu-item
+                v-for="childRoute in route.children"
+                :key="childRoute.name"
+                :index="`${route.path}/${childRoute.path}`"
+              >
+                {{ childRoute.meta.title }}
+              </el-menu-item>
+            </el-submenu>
+          </template>
         </template>
       </el-menu>
     </el-scrollbar>
@@ -29,6 +30,7 @@
 
 <script>
   import { adminRoutes } from '@/router/router.config.js';
+
   export default {
     data() {
       return {
