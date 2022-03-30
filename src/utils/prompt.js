@@ -6,7 +6,7 @@ export function showLoading(params) {
     background: 'rgba(0, 0, 0, 0.7)'
   };
   if (typeof params === 'string') {
-    Object.assign(options, { title: params });
+    Object.assign(options, { text: params });
   } else {
     Object.assign(options, params);
   }
