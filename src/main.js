@@ -5,7 +5,7 @@ import store from './store';
 import api from './api';
 import echarts from './plugins/echarts';
 import Clipboard from 'v-clipboard';
-import { showLoading, autoLoading } from '@/utils';
+import { showLoading, autoLoading, getImageUrl } from '@/utils';
 
 import 'virtual:windi.css';
 import 'virtual:svg-icons-register';
@@ -21,6 +21,7 @@ Vue.prototype.$http = api;
 Vue.prototype.$echarts = echarts;
 Vue.prototype.$showLoading = showLoading;
 Vue.prototype.$autoLoading = autoLoading;
+Vue.prototype.$getImageUrl = getImageUrl;
 
 Vue.config.productionTip = false;
 

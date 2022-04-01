@@ -6,6 +6,8 @@
     </div>
     <div>富文本编辑器：</div>
     <RichTextEditor :content.sync="content" />
+    <div>上传图片：</div>
+    <UploadImage :img-url.sync="imgUrl" :img-list.sync="imgList" :limit="1" />
   </div>
 </template>
 
@@ -13,7 +15,9 @@
   export default {
     data() {
       return {
-        content: ''
+        content: '',
+        imgUrl: '',
+        imgList: []
       };
     }
   };
