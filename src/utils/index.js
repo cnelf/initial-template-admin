@@ -5,3 +5,4 @@ export * from './format-time';
 export * from './random';
 export * from './downloadImage';
 export * from './get-image-url';
+export * from './theme';

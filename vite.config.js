@@ -35,6 +35,15 @@ export default (mode) => {
         }
       ]
     },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `
+            @use "sass:math";
+          `
+        }
+      }
+    },
     plugins: [
       createVuePlugin(),
       windiCSS(),

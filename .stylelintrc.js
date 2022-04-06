@@ -27,7 +27,8 @@ module.exports = {
           'if',
           'each',
           'include',
-          'mixin'
+          'mixin',
+          'use'
         ]
       }
     ],

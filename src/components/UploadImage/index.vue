@@ -267,8 +267,8 @@
     background-color: #fbfdff;
 
     &:hover {
-      border-color: #409eff;
-      color: #409eff;
+      border-color: var(--color-primary);
+      color: var(--color-primary);
     }
 
     i {
