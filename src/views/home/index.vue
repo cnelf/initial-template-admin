@@ -9,6 +9,8 @@
     <RichTextEditor :content.sync="content" />
     <div>上传图片：</div>
     <UploadImage :img-url.sync="imgUrl" :img-list.sync="imgList" :limit="1" />
+    <div>Echarts图表</div>
+    <Chart-View class="h-400px" :chart-option="chartOption" />
   </div>
 </template>
 
@@ -18,7 +20,22 @@
       return {
         content: '',
         imgUrl: '',
-        imgList: []
+        imgList: [],
+        chartOption: {
+          xAxis: {
+            type: 'category',
+            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+          },
+          yAxis: {
+            type: 'value'
+          },
+          series: [
+            {
+              data: [120, 200, 150, 80, 70, 110, 130],
+              type: 'bar'
+            }
+          ]
+        }
       };
     }
   };

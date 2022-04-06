@@ -18,6 +18,7 @@
   - 主题色切换（ThemePicker）
   - 富文本编辑器（RichTextEditor）
   - 图片上传（UploadImage）
+  - Echarts 图表（ChartView）
 
 ### 待完成
 
@@ -29,7 +30,6 @@
 - 通用组件
   - 空状态（EmptyView）
   - 视频播放器（VideoPlayer）
-  - Echarts 图表（Charts）
   - 分页组件（Pagination）
   - 全屏控制按钮（Screenfull）
   - 轮播图（Swiper）
