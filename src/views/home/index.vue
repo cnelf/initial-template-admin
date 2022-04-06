@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="page-container">
+    <div class="text-primary">主题色文本</div>
     <div class="flex items-center">
       <div>切换主题色：</div>
       <ThemePicker />
@@ -23,4 +24,4 @@
   };
 </script>
 
-<style></style>
+<style lang="scss" scoped></style>

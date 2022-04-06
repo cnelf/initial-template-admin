@@ -17,6 +17,7 @@
 - 通用组件
   - 主题色切换（ThemePicker）
   - 富文本编辑器（RichTextEditor）
+  - 图片上传（UploadImage）
 
 ### 待完成
 
@@ -27,7 +28,6 @@
 - 多语言 i18n
 - 通用组件
   - 空状态（EmptyView）
-  - 图片上传（UploadImage）
   - 视频播放器（VideoPlayer）
   - Echarts 图表（Charts）
   - 分页组件（Pagination）

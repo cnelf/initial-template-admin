@@ -177,7 +177,7 @@
           font-size: 32px;
           font-weight: bold;
           line-height: 40px;
-          color: #409eff;
+          color: var(--color-primary);
           opacity: 0;
           animation-name: slideUp;
           animation-duration: 0.5s;
