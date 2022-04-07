@@ -1,5 +1,5 @@
 <template>
-  <el-main>
+  <el-main id="globalScrollWrapper">
     <el-breadcrumb v-show="matched && matched.length > 1">
       <el-breadcrumb-item v-for="(route, i) in matched" :key="route.path" :to="routeTo(i, route.path)">{{
         route.meta.title
@@ -13,12 +13,15 @@
 
 <script>
   export default {
+    name: 'Main',
+
     computed: {
       matched() {
         const matched = this.$route.matched;
         return matched.filter((route) => route.meta?.title);
       }
     },
+
     methods: {
       routeTo(i, path) {
         if (i === 0 || i === this.matched.length - 1) return;
