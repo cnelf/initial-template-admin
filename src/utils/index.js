@@ -7,3 +7,4 @@ export * from './downloadImage';
 export * from './get-image-url';
 export * from './theme';
 export * from './scroll-to';
+export * from './date';
