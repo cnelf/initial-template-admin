@@ -24,13 +24,13 @@ const requestAnimFrame = (function () {
  * @param {number} amount
  */
 function move(amount) {
-  document.documentElement.scrollTop = amount;
-  document.body.parentNode.scrollTop = amount;
-  document.body.scrollTop = amount;
+  const el = document.querySelector('#globalScrollWrapper');
+  el.scrollTop = amount;
 }
 
 function position() {
-  return document.documentElement.scrollTop || document.body.parentNode.scrollTop || document.body.scrollTop;
+  const el = document.querySelector('#globalScrollWrapper');
+  return el.scrollTop;
 }
 
 /**

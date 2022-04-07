@@ -1,17 +1,18 @@
 <template>
-  <el-container class="flex-col h-full">
+  <div class="layout">
     <Header></Header>
-    <el-container class="flex-1">
+    <div class="main-wrapper">
       <Aside></Aside>
       <Main></Main>
-    </el-container>
-  </el-container>
+    </div>
+  </div>
 </template>
 
 <script>
   import Header from './components/Header.vue';
   import Aside from './components/Aside.vue';
   import Main from './components/Main.vue';
+
   export default {
     name: 'Layout',
 
@@ -22,3 +23,15 @@
     }
   };
 </script>
+
+<style lang="scss" scoped>
+  .layout {
+    height: 100%;
+
+    .main-wrapper {
+      display: flex;
+      overflow: auto;
+      height: calc(100% - 60px);
+    }
+  }
+</style>
