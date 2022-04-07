@@ -19,6 +19,7 @@
   - 富文本编辑器（RichTextEditor）
   - 图片上传（UploadImage）
   - Echarts 图表（ChartView）
+  - 分页器（Pagination）
 
 ### 待完成
 
@@ -30,7 +31,6 @@
 - 通用组件
   - 空状态（EmptyView）
   - 视频播放器（VideoPlayer）
-  - 分页组件（Pagination）
   - 全屏控制按钮（Screenfull）
   - 轮播图（Swiper）
   - 日历组件（Calendar）
