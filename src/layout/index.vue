@@ -1,7 +1,7 @@
 <template>
   <el-container class="flex-col h-full">
     <Header></Header>
-    <el-container class="flex-1 h-full">
+    <el-container class="flex-1">
       <Aside></Aside>
       <Main></Main>
     </el-container>

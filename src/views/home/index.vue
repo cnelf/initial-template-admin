@@ -9,8 +9,15 @@
     <RichTextEditor :content.sync="content" />
     <div>上传图片：</div>
     <UploadImage :img-url.sync="imgUrl" :img-list.sync="imgList" :limit="1" />
-    <div>Echarts图表</div>
+    <div>Echarts图表：</div>
     <Chart-View class="h-400px" :chart-option="chartOption" />
+    <div>分页器：</div>
+    <Pagination
+      :total="page.total"
+      :page-index.sync="page.pageIndex"
+      :page-size.sync="page.pageSize"
+      @pagination="handlePagination"
+    />
   </div>
 </template>
 
@@ -35,8 +42,19 @@
               type: 'bar'
             }
           ]
+        },
+        page: {
+          total: 100,
+          pageIndex: 1,
+          pageSize: 10
         }
       };
+    },
+
+    methods: {
+      handlePagination() {
+        console.warn(this.page);
+      }
     }
   };
 </script>
