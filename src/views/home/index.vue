@@ -18,6 +18,8 @@
       :page-size.sync="page.pageSize"
       @pagination="handlePagination"
     />
+    <div>日历：</div>
+    <LunarCalendar />
   </div>
 </template>
 
