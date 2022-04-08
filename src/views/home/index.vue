@@ -20,6 +20,14 @@
     />
     <div>日历：</div>
     <LunarCalendar />
+    <div>虚拟滚动：</div>
+    <VirtualScroll :item-height="41" :items="items" :height="300" :width="300">
+      <template #default="{ item }">
+        <div class="virtual-scroll-demo__item">
+          {{ item.title }}
+        </div>
+      </template>
+    </VirtualScroll>
   </div>
 </template>
 
@@ -53,6 +61,18 @@
       };
     },
 
+    computed: {
+      items() {
+        const arr = [];
+        for (let index = 1; index < 20000; index++) {
+          arr.push({
+            title: '列表项' + index
+          });
+        }
+        return arr;
+      }
+    },
+
     methods: {
       handlePagination() {
         console.warn(this.page);
@@ -61,4 +81,11 @@
   };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+  .virtual-scroll-demo__item {
+    border-bottom: 1px solid var(--border-color-base);
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+  }
+</style>

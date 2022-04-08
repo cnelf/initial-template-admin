@@ -45,7 +45,7 @@ export default (mode) => {
       }
     },
     plugins: [
-      createVuePlugin(),
+      createVuePlugin({ jsx: true }),
       windiCSS(),
       process.env.NODE_ENV === 'production' &&
         visualizer({

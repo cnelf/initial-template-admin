@@ -20,6 +20,8 @@
   - 图片上传（UploadImage）
   - Echarts 图表（ChartView）
   - 分页器（Pagination）
+  - 日历组件（Calendar->LunarCalendar）
+  - 虚拟滚动列表（VirtualScroll）
 
 ### 待完成
 
@@ -33,7 +35,6 @@
   - 视频播放器（VideoPlayer）
   - 全屏控制按钮（Screenfull）
   - 轮播图（Swiper）
-  - 日历组件（Calendar）
 
 ### 常见问题
 
