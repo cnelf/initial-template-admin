@@ -1,6 +1,16 @@
-<script lang="jsx">
-  const prefixCls = 'virtual-scroll';
+<template>
+  <div ref="wrapElRef" :class="prefixCls" :style="getWrapStyle">
+    <div :class="`${prefixCls}__container`" :style="getContainerStyle">
+      <template v-for="(item, index) in getItems">
+        <div :key="index" :class="`${prefixCls}__item`" :style="{ top: getItemTop(index) }">
+          <slot :item="item" :index="index" />
+        </div>
+      </template>
+    </div>
+  </div>
+</template>
 
+<script>
   function convertToUnit(str, unit = 'px') {
     if (str === undefined || str === null || str === '') {
       return undefined;
@@ -56,6 +66,7 @@
 
     data() {
       return {
+        prefixCls: 'virtual-scroll',
         state: {
           first: 0,
           last: 0,
@@ -97,7 +108,12 @@
         minHeight && (style.minHeight = minHeight);
         maxWidth && (style.maxWidth = maxWidth);
         maxHeight && (style.maxHeight = maxHeight);
+
         return style;
+      },
+      getItems() {
+        const items = this.items || [];
+        return items.slice(this.getFirstToRender, this.getLastToRender);
       }
     },
 
@@ -131,6 +147,11 @@
         return first + Math.ceil(height / this.getItemHeight);
       },
 
+      getItemTop(index) {
+        const top = convertToUnit((this.getFirstToRender + index) * this.getItemHeight);
+        return top;
+      },
+
       onScroll() {
         const wrapEl = this.$refs.wrapElRef;
         if (!wrapEl) {
@@ -139,32 +160,7 @@
         this.state.scrollTop = wrapEl.scrollTop;
         this.state.first = this.getFirst();
         this.state.last = this.getLast(this.state.first);
-      },
-
-      renderChildren() {
-        const items = this.items || [];
-        return items.slice(this.getFirstToRender, this.getLastToRender).map(this.getChild);
-      },
-
-      getChild(item, index) {
-        index += this.getFirstToRender;
-        const top = convertToUnit(index * this.getItemHeight);
-        return (
-          <div class={`${prefixCls}__item`} style={{ top }} key={index}>
-            {this.$scopedSlots.default({ item, index })}
-          </div>
-        );
       }
-    },
-
-    render() {
-      return (
-        <div class={prefixCls} style={this.getWrapStyle} ref="wrapElRef">
-          <div class={`${prefixCls}__container`} style={this.getContainerStyle}>
-            {this.renderChildren()}
-          </div>
-        </div>
-      );
     }
   };
 </script>
