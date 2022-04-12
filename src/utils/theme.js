@@ -1,10 +1,12 @@
-const { version } = await import('element-ui/package.json');
+import { version } from 'element-ui/package.json';
 const ORIGINAL_THEME = '#409eff'; // elementUI默认主题色
 let chalk = ''; // theme-chalk的内容
 
-// 设置主题色
-const theme = getComputedStyle(document.documentElement).getPropertyValue('--color-primary').trim();
-changeTheme(theme);
+// 等待下次事件循环再设置主题色
+setTimeout(() => {
+  const theme = getComputedStyle(document.documentElement).getPropertyValue('--color-primary').trim();
+  changeTheme(theme);
+}, 0);
 
 export async function changeTheme(color) {
   if (typeof color !== 'string') return;
