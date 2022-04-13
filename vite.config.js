@@ -3,6 +3,8 @@ import windiCSS from 'vite-plugin-windicss';
 import visualizer from 'rollup-plugin-visualizer';
 import svgIconsPlugin from 'vite-plugin-svg-icons';
 import compressPlugin from 'vite-plugin-compression';
+import eslintPlugin from 'vite-plugin-eslint';
+import imageminPlugin from 'vite-plugin-imagemin';
 import Components from 'unplugin-vue-components/vite';
 import autoprefixer from 'autoprefixer';
 import { loadEnv } from 'vite';
@@ -71,6 +73,7 @@ export default ({ mode, command }) => {
     },
     plugins: [
       createVuePlugin({ jsx: true }),
+      eslintPlugin(),
       windiCSS(),
       createHtmlPlugin({
         minify: true,
@@ -78,6 +81,33 @@ export default ({ mode, command }) => {
           data: {
             title: VITE_APP_TITLE
           }
+        }
+      }),
+      imageminPlugin({
+        gifsicle: {
+          optimizationLevel: 7,
+          interlaced: false
+        },
+        optipng: {
+          optimizationLevel: 7
+        },
+        mozjpeg: {
+          quality: 20
+        },
+        pngquant: {
+          quality: [0.8, 0.9],
+          speed: 4
+        },
+        svgo: {
+          plugins: [
+            {
+              name: 'removeViewBox'
+            },
+            {
+              name: 'removeEmptyAttrs',
+              active: false
+            }
+          ]
         }
       }),
       svgIconsPlugin({
