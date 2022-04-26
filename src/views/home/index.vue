@@ -10,7 +10,9 @@
     <div>上传图片：</div>
     <UploadImage :img-url.sync="imgUrl" :img-list.sync="imgList" :limit="1" />
     <div>Echarts图表：</div>
-    <Chart-View class="h-400px" :chart-option="chartOption" />
+    <div class="h-400px">
+      <ChartView :option="chartOption" />
+    </div>
     <div>分页器：</div>
     <Pagination
       :total="page.total"

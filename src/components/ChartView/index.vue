@@ -1,5 +1,5 @@
 <template>
-  <div ref="chart"></div>
+  <div ref="chart" class="chart-view"></div>
 </template>
 
 <script>
@@ -9,17 +9,17 @@
     name: 'ChartView',
 
     props: {
-      chartOption: {
+      option: {
         type: Object,
         default: () => {}
       }
     },
 
     watch: {
-      chartOption: {
+      option: {
         deep: true,
         handler(newVal) {
-          this.setOptions(newVal);
+          this.setOption(newVal);
         }
       }
     },
@@ -40,7 +40,7 @@
 
     methods: {
       resizeHandler: throttle(function () {
-        // eslint-disable-next-line
+        // eslint-disable-next-line no-invalid-this
         this.chart && this.chart.resize();
       }, 200),
 
@@ -48,7 +48,7 @@
         this.$nextTick(() => {
           const chartEl = this.$refs.chart;
           this.chart = this.$echarts.init(chartEl);
-          this.chart.setOption(this.chartOption);
+          this.setOption(this.option);
           this.chart.on('click', this.handleClick);
         });
       },
@@ -57,7 +57,7 @@
         this.$emit('click', params);
       },
 
-      setOptions(option) {
+      setOption(option) {
         this.clearChart();
         this.chart && this.chart.setOption(option);
       },
@@ -69,4 +69,8 @@
   };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+  .chart-view {
+    height: 100%;
+  }
+</style>
