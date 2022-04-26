@@ -71,6 +71,9 @@ export default ({ mode, command }) => {
         ]
       }
     },
+    optimizeDeps: {
+      include: ['element-ui', 'lodash-es']
+    },
     plugins: [
       createVuePlugin({ jsx: true }),
       eslintPlugin(),
