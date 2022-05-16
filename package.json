@@ -39,6 +39,7 @@
     "bin-wrapper": "npm:bin-wrapper-china"
   },
   "dependencies": {
+    "@vue/composition-api": "^1.6.1",
     "axios": "^0.26.1",
     "core-js": "^3.6.5",
     "dayjs": "^1.10.8",
@@ -46,11 +47,11 @@
     "element-ui": "^2.15.6",
     "lodash-es": "^4.17.21",
     "nprogress": "^0.2.0",
+    "pinia": "^2.0.14",
     "qs": "^6.10.3",
     "v-clipboard": "^2.2.3",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
-    "vuex": "^3.4.0",
     "wangeditor": "^4.7.12"
   },
   "devDependencies": {
@@ -73,7 +74,7 @@
     "stylelint-config-standard": "^22.0.0",
     "stylelint-order": "^4.1.0",
     "unplugin-vue-components": "0.17.11",
-    "vite": "^2.9.1",
+    "vite": "^2.9.9",
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-eslint": "^1.4.0",
     "vite-plugin-html": "^3.2.0",

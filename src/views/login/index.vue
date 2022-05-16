@@ -4,7 +4,7 @@
       <div slot="header">登 录</div>
       <el-form label-width="60px" style="width: 360px">
         <el-form-item label="账号："><el-input type="text"></el-input></el-form-item>
-        <el-form-item label="密码："><el-input type="passsword"></el-input></el-form-item>
+        <el-form-item label="密码："><el-input type="password"></el-input></el-form-item>
         <el-form-item><el-button @click="handleLogin">登 录</el-button></el-form-item>
       </el-form>
     </el-card>

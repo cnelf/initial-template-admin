@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
-import store from './store';
 import api from './api';
 import echarts from './plugins/echarts';
 import Clipboard from 'v-clipboard';
+import { pinia } from '@/stores';
 import { showLoading, autoLoading, getImageUrl } from '@/utils';
 
 import 'virtual:windi.css';
@@ -27,6 +27,6 @@ Vue.config.productionTip = false;
 
 new Vue({
   router,
-  store,
+  pinia,
   render: (h) => h(App)
 }).$mount('#app');

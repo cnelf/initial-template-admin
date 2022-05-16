@@ -34,7 +34,12 @@
 </template>
 
 <script>
+  import { userStore } from '@/stores';
+  import { mapState } from 'pinia';
+
   export default {
+    name: 'Home',
+
     data() {
       return {
         content: '',
@@ -64,6 +69,7 @@
     },
 
     computed: {
+      ...mapState(userStore, ['fullName']),
       items() {
         const arr = [];
         for (let index = 1; index < 20000; index++) {
