@@ -37,6 +37,8 @@ specifiers:
   vite-plugin-eslint: ^1.4.0
   vite-plugin-html: ^3.2.0
   vite-plugin-imagemin: ^0.6.1
+  vite-plugin-optimize-persist: ^0.1.2
+  vite-plugin-package-config: ^0.1.1
   vite-plugin-svg-icons: ^1.0.5
   vite-plugin-vue2: ^1.9.3
   vite-plugin-windicss: ^1.8.3
@@ -87,6 +89,8 @@ devDependencies:
   vite-plugin-eslint: 1.4.0_eslint@7.32.0+vite@2.9.1
   vite-plugin-html: 3.2.0_vite@2.9.1
   vite-plugin-imagemin: 0.6.1_vite@2.9.1
+  vite-plugin-optimize-persist: 0.1.2_e8535a6275298a6eb7d603176e126257
+  vite-plugin-package-config: 0.1.1_vite@2.9.1
   vite-plugin-svg-icons: 1.1.0_vite@2.9.1
   vite-plugin-vue2: 1.9.3_1fbe351b36f927d48c27a4a7ec773da4
   vite-plugin-windicss: 1.8.3_vite@2.9.1
@@ -145,7 +149,7 @@ packages:
       '@babel/traverse': 7.17.3
       '@babel/types': 7.17.0
       convert-source-map: 1.8.0
-      debug: 4.3.3
+      debug: 4.3.4
       gensync: 1.0.0-beta.2
       json5: 2.2.0
       semver: 6.3.0
@@ -444,7 +448,7 @@ packages:
       '@babel/helper-split-export-declaration': 7.16.7
       '@babel/parser': 7.17.3
       '@babel/types': 7.17.0
-      debug: 4.3.3
+      debug: 4.3.4
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -463,7 +467,7 @@ packages:
     engines: {node: ^10.12.0 || >=12.0.0}
     dependencies:
       ajv: 6.12.6
-      debug: 4.3.3
+      debug: 4.3.4
       espree: 7.3.1
       globals: 13.12.1
       ignore: 4.0.6
@@ -480,7 +484,7 @@ packages:
     engines: {node: '>=10.10.0'}
     dependencies:
       '@humanwhocodes/object-schema': 1.2.1
-      debug: 4.3.3
+      debug: 4.3.4
       minimatch: 3.1.2
     transitivePeerDependencies:
       - supports-color
@@ -776,7 +780,7 @@ packages:
   /@windicss/config/1.8.3:
     resolution: {integrity: sha512-1fvfZhRD7WfV/Xh6uIAYKIdbQWrwEgSdkFlHiLPzMDS44KjwNZILDzLAz9Y2W5H2K4MLGgGMnzGS89ECyjc0Ww==}
     dependencies:
-      debug: 4.3.3
+      debug: 4.3.4
       jiti: 1.13.0
       windicss: 3.5.1
     transitivePeerDependencies:
@@ -788,7 +792,7 @@ packages:
     dependencies:
       '@antfu/utils': 0.5.0
       '@windicss/config': 1.8.3
-      debug: 4.3.3
+      debug: 4.3.4
       fast-glob: 3.2.11
       magic-string: 0.25.9
       micromatch: 4.0.4
@@ -4172,7 +4176,7 @@ packages:
   /micromark/2.11.4:
     resolution: {integrity: sha512-+WoovN/ppKolQOFIAajxi7Lu9kInbPxFuTBVEavFcL8eAfVstoc5MocPmqBeAdBOJV00uaVjegzH4+MA0DN/uA==}
     dependencies:
-      debug: 4.3.3
+      debug: 4.3.4
       parse-entities: 2.0.0
     transitivePeerDependencies:
       - supports-color
@@ -6336,6 +6340,31 @@ packages:
       imagemin-webp: 6.0.0
       jpegtran-bin: 6.0.1
       pathe: 0.2.0
+      vite: 2.9.1_sass@1.49.9
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /vite-plugin-optimize-persist/0.1.2_e8535a6275298a6eb7d603176e126257:
+    resolution: {integrity: sha512-H/Ebn2kZO8PvwUF08SsT5K5xMJNCWKoGX71+e9/ER3yNj7GHiFjNQlvGg5ih/zEx09MZ9m7WCxOwmEKbeIVzww==}
+    peerDependencies:
+      vite: ^2.0.0
+      vite-plugin-package-config: ^0.1.0
+    dependencies:
+      debug: 4.3.4
+      fs-extra: 10.0.1
+      vite: 2.9.1_sass@1.49.9
+      vite-plugin-package-config: 0.1.1_vite@2.9.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /vite-plugin-package-config/0.1.1_vite@2.9.1:
+    resolution: {integrity: sha512-w9B3I8ZnqoyhlbzimXjXNk85imrMZgvI9m8f6j3zonK5IVA5KXzpT+PZOHlDz8lqh1vqvoEI1uhy+ZDoLAiA/w==}
+    peerDependencies:
+      vite: ^2.0.0
+    dependencies:
+      debug: 4.3.4
       vite: 2.9.1_sass@1.49.9
     transitivePeerDependencies:
       - supports-color

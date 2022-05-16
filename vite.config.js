@@ -1,12 +1,14 @@
 import path from 'path';
-import windiCSS from 'vite-plugin-windicss';
+import autoprefixer from 'autoprefixer';
+import Components from 'unplugin-vue-components/vite';
 import visualizer from 'rollup-plugin-visualizer';
+import windiCSS from 'vite-plugin-windicss';
 import svgIconsPlugin from 'vite-plugin-svg-icons';
 import compressPlugin from 'vite-plugin-compression';
 import eslintPlugin from 'vite-plugin-eslint';
 import imageminPlugin from 'vite-plugin-imagemin';
-import Components from 'unplugin-vue-components/vite';
-import autoprefixer from 'autoprefixer';
+import PkgConfig from 'vite-plugin-package-config';
+import OptimizationPersist from 'vite-plugin-optimize-persist';
 import { loadEnv } from 'vite';
 import { createVuePlugin } from 'vite-plugin-vue2';
 import { createHtmlPlugin } from 'vite-plugin-html';
@@ -71,10 +73,9 @@ export default ({ mode, command }) => {
         ]
       }
     },
-    optimizeDeps: {
-      include: ['element-ui', 'lodash-es']
-    },
     plugins: [
+      PkgConfig(),
+      OptimizationPersist(),
       createVuePlugin({ jsx: true }),
       eslintPlugin(),
       windiCSS(),
