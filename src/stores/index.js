@@ -5,4 +5,4 @@ Vue.use(PiniaVuePlugin);
 
 export const pinia = createPinia();
 
-export { default as userStore } from './modules/userStore';
+export { default as userStore } from './modules/user-store';

@@ -3,7 +3,7 @@ export * from './prompt';
 export * from './sleep';
 export * from './format-time';
 export * from './random';
-export * from './downloadImage';
+export * from './download-image';
 export * from './get-image-url';
 export * from './theme';
 export * from './scroll-to';
