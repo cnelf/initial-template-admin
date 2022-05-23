@@ -8,6 +8,10 @@ setTimeout(() => {
   changeTheme(theme);
 }, 0);
 
+/**
+ * 改变主题色
+ * @param {string} color
+ */
 export async function changeTheme(color) {
   if (typeof color !== 'string') return;
   const theme = getComputedStyle(document.documentElement).getPropertyValue('--color-primary').trim();

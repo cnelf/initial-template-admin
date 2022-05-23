@@ -1,9 +1,19 @@
-// 根据传入的年月获取到当前年月的第一天，即一号的日期格式
+/**
+ * 根据传入的年月获取到当前年月的第一天，即一号的日期格式
+ * @param {number | string} year
+ * @param {number | string} month
+ * @param {number | string} day
+ * @returns {Date}
+ */
 export function getPointDay(year, month, day) {
   return new Date(year, month, day);
 }
 
-// 传入时间戳格式日期，返回对应年日月
+/**
+ * 传入时间戳格式日期，返回对应年日月
+ * @param {Date} time
+ * @returns {Object}
+ */
 export const getYearMonthDay = (time = new Date()) => {
   const base = new Date(time);
   return {
@@ -13,14 +23,24 @@ export const getYearMonthDay = (time = new Date()) => {
   };
 };
 
-// 比较两个日期年月是否相同
+/**
+ * 比较两个日期年月是否相同
+ * @param {Date} compareDay
+ * @param {Date} baseDay
+ * @returns {boolean}
+ */
 export const isSameYM = (compareDay, baseDay = new Date()) => {
   const { y: y1, m: m1 } = getYearMonthDay(compareDay);
   const { y: y2, m: m2 } = getYearMonthDay(baseDay);
   return y1 === y2 && m1 === m2;
 };
 
-// 比较两个日期年月日是否相同
+/**
+ * 比较两个日期年月日是否相同
+ * @param {Date} compareDay
+ * @param {Date} baseDay
+ * @returns {boolean}
+ */
 export const isSameYMD = (compareDay, baseDay = new Date()) => {
   const { y: y1, m: m1, d: d1 } = getYearMonthDay(compareDay);
   const { y: y2, m: m2, d: d2 } = getYearMonthDay(baseDay);

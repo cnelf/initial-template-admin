@@ -1,4 +1,8 @@
-// 前端下载单个图片
+/**
+ * 下载图片
+ * @param {string} src
+ * @param {string} name
+ */
 export const downloadImage = (src, name) => {
   const image = new Image();
   // 解决跨域 Canvas 污染问题

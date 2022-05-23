@@ -1,8 +1,18 @@
-// 设置 localStorage
-export const setLocalStorage = (name, value, maxAge = 1000 * 60 * 30) =>
+/**
+ * 设置 localStorage
+ * @param {string} name
+ * @param {*} value
+ * @param {number} maxAge
+ */
+export const setLocalStorage = (name, value, maxAge = 1000 * 60 * 30) => {
   window.localStorage.setItem(name, JSON.stringify({ value, maxAge, setTime: Date.now() }));
+};
 
-// 获取指定的 localStorage
+/**
+ * 获取指定的 localStorage
+ * @param {string} name
+ * @returns {*}
+ */
 export const getLocalStorage = (name) => {
   let retJson = null;
   try {
@@ -24,7 +34,10 @@ export const getLocalStorage = (name) => {
   return retJson;
 };
 
-// 移除指定的 localStorage
+/**
+ * 移除指定的 localStorage
+ * @param {string} name
+ */
 export const removeLocalStorage = (name) => {
   window.localStorage.removeItem(name);
 };
